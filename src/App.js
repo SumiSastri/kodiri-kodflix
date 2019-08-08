@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import theHunt from './assets/the-hunt-scandinavian.jpg';
 
 function App() {
 	return (
@@ -8,6 +7,7 @@ function App() {
 			<header className="App-header">
 				<div>
 					<h1>Kodflix</h1>
+					<img alt="the-hunt-film" src={theHunt} />
 				</div>
 			</header>
 		</div>
