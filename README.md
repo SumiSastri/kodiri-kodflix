@@ -1,48 +1,62 @@
-#### Set up
 
-Create react app - npx create-react-app Kodiri-Kodflix
-Clean up the app.js and app.css files
-Remove the react styling in app.css and app.js files
-Ensure you have the parent div set up
-Create h1 jsx tags
-Render Kodiri-Kodflix in the tag
-run yarn start to see the files in local host :3000
+## Kodiri-Kodflix Challenge 2
 
-## Kodiri-Kodflix Challenge 1
+Add 5 more images
+Display them in 2 rows 
+3 covers per row with the same aspect ratio
 
-Add an image of a film and make it cover 100% of the screen
-Steps - select picture and save in assets folder
-Ensure you have the react library and app.css imported
+#### Tech acceptance
+Create a grid of 6 elements 
+distributed across 2 rows 
+with 3 covers
+The items must have the same height and width (aspect ratio)
+The films will stack up one on top of the other
+Fix this with FlexBox
 
-```
-import React from 'react';
-import './App.css';
-```
- Import the image into App.js
- Naming conventions - camelCase
- javaScript is case sensitive
- Import app.css 
 
- ```
- import theHunt from './assets/the-hunt-scandinavian.jpg';
+#### Image resources
+Google
+ImDB
 
- ```
+Icons resources
+FlatIcons
+Font Awesome
 
- Render in an img jsx tag, add an alt tag for the image, to avoid a compiling warning
 
- ```
- 	<img alt="the-hunt-film" src={theHunt} />
-  
-  ```   
-Style the image
-Steps: go into App.css
-select the class name or the ids and style the image and text
+### React
+
+Set up the jsx containers - main for the whole project
+2 rows - row1 and row2 as the row containers
+give each div that holds the images a class name
+use the class name in css to use flex box
 
 ```
 h1 {
-	text-align: center;
+    text-align: center;
 }
+
 img {
-	width: 100%;
+    width: 75%;
+}
+
+.row1,
+.row2 {
+    display: flex;
+}
+
+.bolgen,
+.the-hunt,
+.girl-with-the-dragon-tattoo,
+.snabbe-cash,
+.trapped,
+.dicte {
+    flex: 1;
 }
 ```
+
+Summary:
+Flex alters the default behaviour of jsx-html tags
+By putting elements into a container, each container you display flex
+The elements then gets them into rows
+Each child element flex 1 give you the same column width
+

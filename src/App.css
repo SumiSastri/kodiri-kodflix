@@ -1,6 +1,21 @@
 h1 {
-	text-align: center;
+    text-align: center;
 }
+
 img {
-	width: 100%;
+    width: 75%;
+}
+
+.row1,
+.row2 {
+    display: flex;
+}
+
+.bolgen,
+.the-hunt,
+.girl-with-the-dragon-tattoo,
+.snabbe-cash,
+.trapped,
+.dicte {
+    flex: 1;
 }
