@@ -9,8 +9,8 @@ import dicte from './assets/dicte-film.jpeg';
 
 function App() {
 	return (
-		<div>
-			<header>
+		<div className="app-container">
+			<header className="header">
 				<h1> Kodiri 's Kodflix Challenge</h1>
 			</header>
 			<main className="films-container">
