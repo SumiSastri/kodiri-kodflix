@@ -16,16 +16,16 @@ Fix this with FlexBox for desktop
 Reverse this with FlexBox for mobile 640 screen size and below
 
 #### Image resources
-Google
-ImDB
-VectorStock
-Imgur
+* Google
+* ImDB
+* VectorStock
+* Imgur
 
 Icons resources
-FlatIcons
-Icon Monster
-Font Awesome
-Devicons
+* FlatIcons
+* Icon Monster
+* Font Awesome
+* Devicons
 
 Fonts resources
 Google Fonts
