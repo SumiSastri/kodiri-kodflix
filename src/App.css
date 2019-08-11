@@ -1,14 +1,14 @@
 h1 {
-    text-align: center;
+	text-align: center;
 }
 
 img {
-    width: 75%;
+	width: 75%;
 }
 
 .row1,
 .row2 {
-    display: flex;
+	display: flex;
 }
 
 .bolgen,
@@ -17,5 +17,5 @@ img {
 .snabbe-cash,
 .trapped,
 .dicte {
-    flex: 1;
+	flex: 1;
 }

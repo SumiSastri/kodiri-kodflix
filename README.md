@@ -13,18 +13,19 @@ The items must have the same height and width (aspect ratio)
 The films will stack up one on top of the other
 Fix this with FlexBox
 
-
 #### Image resources
 Google
 ImDB
+VectorStock
+Imgur
 
 Icons resources
 FlatIcons
+Icon Monster
 Font Awesome
-
+Devicons
 
 ### React
-
 Set up the jsx containers - main for the whole project
 2 rows - row1 and row2 as the row containers
 give each div that holds the images a class name
@@ -33,10 +34,6 @@ use the class name in css to use flex box
 ```
 h1 {
     text-align: center;
-}
-
-img {
-    width: 75%;
 }
 
 .row1,
@@ -59,4 +56,18 @@ Flex alters the default behaviour of jsx-html tags
 By putting elements into a container, each container you display flex
 The elements then gets them into rows
 Each child element flex 1 give you the same column width
+The image aspect-ratios can be managed
 
+```
+img {
+    width: 75%;
+}
+```
+
+### Elegance and refactoring
+
+Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
+Remove all empty spaces
+Check naming conventions
+Experiment by commenting out unecessary code, styling
+Remove all commented out code and refactor where needed
