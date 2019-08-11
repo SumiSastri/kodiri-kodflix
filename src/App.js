@@ -16,6 +16,9 @@ function App() {
 			<main className="films-container">
 				<div className="row1">
 					<div className="bolgen">
+						<div className="film-title-overlay">
+							<h5>Bolgen (The Wave)</h5>
+						</div>
 						<img alt="bolgen-film" src={bolgen} />
 					</div>
 					<div className="the-hunt">

@@ -1,10 +1,11 @@
 
-## Kodiri-Kodflix Challenge 2, 3 & 4
-
+## Kodiri-Kodflix Challenge 2, 3 & 4, 5 & 6
 Add 5 more images
 Display them in 2 rows 
 3 covers per row with the same aspect ratio
 Mobile first design
+CSS animation - hover over images
+Show the title of the film on hover
 
 #### Tech acceptance
 Create a grid of 6 elements 
@@ -14,6 +15,9 @@ The items must have the same height and width (aspect ratio)
 The films will stack up one on top of the other
 Fix this with FlexBox for desktop
 Reverse this with FlexBox for mobile 640 screen size and below
+When the user hovers over the film
+The title of the film in text should be visible
+When the user moves mouse away the text should not be visible
 
 #### Image resources
 * Google
@@ -82,6 +86,9 @@ Media display changed with a mobile-first design, flex direction changed back to
 	}
 }
 ```
+
+
+
 ### Elegance and refactoring
 
 Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save

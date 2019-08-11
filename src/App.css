@@ -13,14 +13,37 @@ h1 {
 }
 
 img {
-	width: 75%;
-	height: 95%;
+	width: 65%;
+	height: 75%;
+	padding: 45px;
+	border: dashed 2px #000080;
 }
 
 .row1,
 .row2 {
 	display: flex;
 	align-items: auto;
+	padding: 5px;
+	margin: 5px;
+	position: relative;
+}
+
+h5 {
+	font-family: 'Lacquer', sans-serif;
+	text-align: center;
+	font-size: 18px;
+	color: navy;
+}
+.film-title-overlay {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.bolgen:hover .film-title-overlay {
+	display: block;
 }
 
 .bolgen,
