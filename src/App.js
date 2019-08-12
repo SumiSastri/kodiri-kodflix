@@ -23,20 +23,26 @@ function App() {
 					</div>
 					<div className="the-hunt">
 						<img alt="the-hunt-film" src={theHunt} />
+						<h5>The Hunt</h5>
 					</div>
 					<div className="girl-with-the-dragon-tattoo">
-						<img alt="girl-with-the-dragon-tattoo-film" src={girlWithTheDragonTattoo} /> {' '}
+						<img alt="girl-with-the-dragon-tattoo-film" src={girlWithTheDragonTattoo} />
+						<h5>Girl With The Dragon Tattoo</h5>
 					</div>
 				</div>
+
 				<div className="row2">
 					<div className="snabbe-cash">
 						<img alt="snabbe-cash-film" src={snabbeCash} />
+						<h5>Snabbe Cash</h5>
 					</div>
 					<div className="trapped">
-						<img alt="trapped-film" src={trapped} /> {' '}
+						<img alt="trapped-film" src={trapped} />
+						<h5>Trapped</h5>
 					</div>
 					<div className="dicte">
-						<img alt="dicte-film" src={dicte} /> {' '}
+						<img alt="dicte-film" src={dicte} />
+						<h5>Dicte</h5>
 					</div>
 				</div>
 			</main>

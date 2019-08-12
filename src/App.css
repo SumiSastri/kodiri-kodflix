@@ -25,7 +25,6 @@ img {
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
-	position: relative;
 }
 
 h5 {
@@ -45,6 +44,21 @@ h5 {
 .bolgen:hover .film-title-overlay {
 	display: block;
 }
+.the-hunt:hover .film-title-overlay {
+	display: block;
+}
+.girl-with-the-dragon-tattoo:hover .film-title-overlay {
+	display: block;
+}
+.snabbe-cash:hover .film-title-overlay {
+	display: block;
+}
+.trapped:hover .film-title-overlay {
+	display: block;
+}
+.dicte:hover .film-title-overlay {
+	display: block;
+}
 
 .bolgen,
 .the-hunt,
@@ -53,6 +67,7 @@ h5 {
 .trapped,
 .dicte {
 	flex: 1;
+	position: relative;
 }
 
 @media only screen and (max-width: 640px) {
