@@ -11,48 +11,65 @@ function App() {
 	return (
 		<div className="app-container">
 			<header className="header">
-				<h1> Kodiri 's Kodflix Challenge</h1>
+				<h1> Scandinavian-Noir Kodiri 's Kodflix Challenge</h1>
 			</header>
 			<main className="films-container">
 				<div className="row1">
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>Bolgen (The Wave)</h5>
+						<div className="film-cover-overlay">
+							<h5 className="film-description">
+								The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)
+							</h5>
 						</div>
 						<img alt="bolgen-film" src={bolgen} />
 					</div>
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>The Hunt</h5>
+						<div className="film-cover-overlay">
+							<h5>
+								The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
+								but what (or who) is the prey?(Denmark)
+							</h5>
 						</div>
 						<img alt="the-hunt-film" src={theHunt} />
 					</div>
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>Girl With The Dragon Tattoo</h5>
+						<div className="film-cover-overlay">
+							<h5>
+								Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
+								sadist's fates are entagled with each other? (Sweden)
+							</h5>
 						</div>
-						<img alt="girl-with-the-dragon-tattoo-film" src={girlWithTheDragonTattoo} /> {' '}
+						<img alt="girl-with-the-dragon-tattoo-film" src={girlWithTheDragonTattoo} />
 					</div>
 				</div>
-
 				<div className="row2">
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>Snabbe Cash</h5>
+						<div className="film-cover-overlay">
+							<h5>
+								Snabbe Cash: A student wants to make some easy money as a cab driver, it gets messy as
+								the criminal underworld are his passengers(Sweden)
+							</h5>
 						</div>
 						<img alt="snabbe-cash-film" src={snabbeCash} />
 					</div>
+
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>Trapped</h5>
+						<div className="film-cover-overlay">
+							<h5>
+								Trapped: A multilated corpse is found by a fisherman, who does the headless, limbless
+								body belong to?(Iceland)
+							</h5>
 						</div>
-						<img alt="trapped-film" src={trapped} /> {' '}
+						<img alt="trapped-film" src={trapped} />
 					</div>
 					<div className="film-cover">
-						<div className="film-title-overlay">
-							<h5>Dicte</h5>
+						<div className="film-cover-overlay">
+							<h5>
+								Dicte: A divorced journalist goes back to her home town to make peace with her past, but
+								things take an ugly turn (Denmark)
+							</h5>
 						</div>
-						<img alt="dicte-film" src={dicte} /> {' '}
+						<img alt="dicte-film" src={dicte} />
 					</div>
 				</div>
 			</main>

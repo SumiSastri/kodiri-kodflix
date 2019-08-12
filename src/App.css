@@ -25,7 +25,7 @@ img {
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
-	border: solid 1px blanchedalmond;
+	border: solid 1px lightyellow;
 }
 
 h5 {
@@ -35,22 +35,28 @@ h5 {
 	color: navy;
 }
 
-.film-title-overlay {
-	transition: bottom ease 1s;
+.film-cover-overlay {
+	transition: top ease 1s;
 	display: none;
 	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
+	top: -10px;
+	right: 0;
+	background-color: blanchedalmond;
+	width: 65%;
+	align-content: center;
+	opacity: 0.7;
 }
 
-.film-cover:hover .film-title-overlay {
+.film-cover:hover .film-cover-overlay {
 	display: block;
+	top: 0;
 }
 
 .film-cover {
 	flex: 1;
 	position: relative;
+	overflow: hidden;
 }
 
 @media only screen and (max-width: 640px) {
