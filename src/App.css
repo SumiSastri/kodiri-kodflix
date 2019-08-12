@@ -25,6 +25,7 @@ img {
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
+	border: solid 1px blanchedalmond;
 }
 
 h5 {
@@ -33,7 +34,9 @@ h5 {
 	font-size: 18px;
 	color: navy;
 }
+
 .film-title-overlay {
+	transition: bottom ease 1s;
 	display: none;
 	position: absolute;
 	bottom: 0;
@@ -41,31 +44,11 @@ h5 {
 	width: 100%;
 }
 
-.bolgen:hover .film-title-overlay {
-	display: block;
-}
-.the-hunt:hover .film-title-overlay {
-	display: block;
-}
-.girl-with-the-dragon-tattoo:hover .film-title-overlay {
-	display: block;
-}
-.snabbe-cash:hover .film-title-overlay {
-	display: block;
-}
-.trapped:hover .film-title-overlay {
-	display: block;
-}
-.dicte:hover .film-title-overlay {
+.film-cover:hover .film-title-overlay {
 	display: block;
 }
 
-.bolgen,
-.the-hunt,
-.girl-with-the-dragon-tattoo,
-.snabbe-cash,
-.trapped,
-.dicte {
+.film-cover {
 	flex: 1;
 	position: relative;
 }
