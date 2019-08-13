@@ -25,24 +25,14 @@ function App() {
 						description={`The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
 						but what (or who) is the prey?(Denmark)`}
 					/>
-					{/* <div className="film-cover">
-						<div className="film-cover-overlay">
-							<h5>
-								
-							</h5>
-						</div>
-						<img alt="the-hunt-film" src={theHunt} />
-					</div> */}
-					<div className="film-cover">
-						<div className="film-cover-overlay">
-							<h5>
-								Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
-								sadist's fates are entagled with each other? (Sweden)
-							</h5>
-						</div>
-						<img alt="girl-with-the-dragon-tattoo-film" src={girlWithTheDragonTattoo} />
-					</div>
+
+					<FilmCatalog
+						cover={theHunt}
+						description={`Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
+						sadist's fates are entagled with each other? (Sweden)`}
+					/>
 				</div>
+
 				<div className="row2">
 					<div className="film-cover">
 						<div className="film-cover-overlay">
