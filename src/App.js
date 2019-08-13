@@ -16,24 +16,23 @@ function App() {
 
 			<main className="films-container">
 				<div className="row1">
+					<FilmCatalog
+						cover={bolgen}
+						description={`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+					/>
+					<FilmCatalog
+						cover={theHunt}
+						description={`The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
+						but what (or who) is the prey?(Denmark)`}
+					/>
 					{/* <div className="film-cover">
 						<div className="film-cover-overlay">
-							<h5 className="film-description">
-								The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)
-							</h5>
-						</div>
-						<img alt="bolgen-film" src={bolgen} />
-					</div> */}
-					<FilmCatalog />
-					<div className="film-cover">
-						<div className="film-cover-overlay">
 							<h5>
-								The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
-								but what (or who) is the prey?(Denmark)
+								
 							</h5>
 						</div>
 						<img alt="the-hunt-film" src={theHunt} />
-					</div>
+					</div> */}
 					<div className="film-cover">
 						<div className="film-cover-overlay">
 							<h5>
@@ -82,11 +81,9 @@ function App() {
 function FilmCatalog(props) {
 	return (
 		<div className="film-cover">
-			<img alt={'the-wave-film'} src={bolgen} />
+			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
 			<div className="film-cover-overlay">
-				<h5 className="film-description">
-					The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)
-				</h5>
+				<h5>{props.description}</h5>/>
 			</div>
 		</div>
 	);
