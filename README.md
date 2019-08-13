@@ -1,5 +1,7 @@
 
 ## Kodiri-Kodflix Challenge 2-11
+![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
+
 Add 5 more images
 Display them in 2 rows 
 3 covers per row with the same aspect ratio

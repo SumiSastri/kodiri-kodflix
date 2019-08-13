@@ -81,6 +81,7 @@ function App() {
 function FilmCatalog(props) {
 	return (
 		<div className="film-cover">
+			<img alt="the-wave-film" src={props.bolgen} />
 			<div className="film-cover-overlay">
 				<h5 className="film-description">
 					The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)
