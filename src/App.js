@@ -6,6 +6,7 @@ import girlWithTheDragonTattoo from './assets/girl-with-the-dragon-tattoo-film.j
 import snabbeCash from './assets/snabbe-cash-film.jpeg';
 import trapped from './assets/trapped-film.jpeg';
 import dicte from './assets/dicte-film.jpeg';
+import FilmCatalog from './film-catalog';
 
 function App() {
 	return (
@@ -52,17 +53,6 @@ function App() {
 					/>
 				</div>
 			</main>
-		</div>
-	);
-}
-
-function FilmCatalog(props) {
-	return (
-		<div className="film-cover">
-			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
-			<div className="film-cover-overlay">
-				<h5>{props.description}</h5>/>
-			</div>
 		</div>
 	);
 }
