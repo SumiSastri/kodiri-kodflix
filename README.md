@@ -2,26 +2,25 @@
 ## Kodiri-Kodflix Challenge 2-11
 ![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
 
-Add 5 more images
-Display them in 2 rows 
-3 covers per row with the same aspect ratio
-Mobile first design
-CSS animation - hover over images
-Show the title of the film on hover
-Scale the app by making reusable components
+* Add 5 more images
+* Display them in 2 rows 
+* 3 covers per row with the same aspect ratio
+* Mobile first design
+* CSS animation - hover over images
+* Show the title of the film on hover
+* Scale the app by making reusable components
 
 #### Tech acceptance
-Create a grid of 6 elements 
-distributed across 2 rows 
-with 3 covers
-The items must have the same height and width (aspect ratio)
-The films will stack up one on top of the other
-Fix this with FlexBox for desktop
-Reverse this with FlexBox for mobile 640 screen size and below
-When the user hovers over the film
-The title of the film in text should be visible
-When the user moves mouse away the text should not be visible
-Make a reusable component for each film
+* Create a grid of 6 elements 
+* distributed across 2 rows with 3 covers
+* The items must have the same height and width (aspect ratio)
+* The films will stack up one on top of the other
+* Fix this with FlexBox for desktop
+* Reverse this with FlexBox for mobile 640 screen size and below
+* When the user hovers over the film
+* The title of the film in text should be visible
+* When the user moves mouse away the text should not be visible
+* Make a reusable component for each film
 
 #### Image resources
 * Google
