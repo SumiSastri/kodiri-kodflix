@@ -27,41 +27,29 @@ function App() {
 					/>
 
 					<FilmCatalog
-						cover={theHunt}
+						cover={girlWithTheDragonTattoo}
 						description={`Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
 						sadist's fates are entagled with each other? (Sweden)`}
 					/>
 				</div>
 
 				<div className="row2">
-					<div className="film-cover">
-						<div className="film-cover-overlay">
-							<h5>
-								Snabbe Cash: A student wants to make some easy money as a cab driver, it gets messy as
-								the criminal underworld are his passengers(Sweden)
-							</h5>
-						</div>
-						<img alt="snabbe-cash-film" src={snabbeCash} />
-					</div>
+					<FilmCatalog
+						cover={snabbeCash}
+						description={`Snabbe Cash: A student wants to make some easy money as a cab driver, it gets messy as
+						the criminal underworld are his passengers(Sweden)`}
+					/>
 
-					<div className="film-cover">
-						<div className="film-cover-overlay">
-							<h5>
-								Trapped: A multilated corpse is found by a fisherman, who does the headless, limbless
-								body belong to?(Iceland)
-							</h5>
-						</div>
-						<img alt="trapped-film" src={trapped} />
-					</div>
-					<div className="film-cover">
-						<div className="film-cover-overlay">
-							<h5>
-								Dicte: A divorced journalist goes back to her home town to make peace with her past, but
-								things take an ugly turn (Denmark)
-							</h5>
-						</div>
-						<img alt="dicte-film" src={dicte} />
-					</div>
+					<FilmCatalog
+						cover={trapped}
+						description={`Trapped: A multilated corpse is found by a fisherman, who does the headless, limbless
+						body belong to?(Iceland)`}
+					/>
+					<FilmCatalog
+						cover={dicte}
+						description={`Dicte: A divorced journalist goes back to her home town to make peace with her past, but
+						things take an ugly turn (Denmark)`}
+					/>
 				</div>
 			</main>
 		</div>
