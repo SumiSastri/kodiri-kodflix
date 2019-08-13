@@ -13,6 +13,7 @@ function App() {
 			<header className="header">
 				<h1> Scandinavian-Noir Kodiri 's Kodflix Challenge</h1>
 			</header>
+			<FilmCatalog />
 			<main className="films-container">
 				<div className="row1">
 					<div className="film-cover">
@@ -76,4 +77,17 @@ function App() {
 		</div>
 	);
 }
+
+function FilmCatalog(props) {
+	return (
+		<div className="film-cover">
+			<div className="film-cover-overlay">
+				<h5 className="film-description">
+					The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)
+				</h5>
+			</div>
+		</div>
+	);
+}
+
 export default App;

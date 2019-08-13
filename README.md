@@ -1,11 +1,12 @@
 
-## Kodiri-Kodflix Challenge 2, 3 & 4, 5 & 6
+## Kodiri-Kodflix Challenge 2-11
 Add 5 more images
 Display them in 2 rows 
 3 covers per row with the same aspect ratio
 Mobile first design
 CSS animation - hover over images
 Show the title of the film on hover
+Scale the app by making reusable components
 
 #### Tech acceptance
 Create a grid of 6 elements 
@@ -18,6 +19,7 @@ Reverse this with FlexBox for mobile 640 screen size and below
 When the user hovers over the film
 The title of the film in text should be visible
 When the user moves mouse away the text should not be visible
+Make a reusable component for each film
 
 #### Image resources
 * Google
