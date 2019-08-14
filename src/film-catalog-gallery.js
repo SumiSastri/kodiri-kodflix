@@ -10,6 +10,9 @@ import FilmCatalog from './film-catalog';
 function FilmCatalogGallery() {
 	return (
 		<main className="films-container">
+			<header className="header">
+				<h1> Scandinavian-Noir Kodiri 's Kodflix Challenge</h1>
+			</header>
 			<div className="row1">
 				<FilmCatalog
 					cover={bolgen}
