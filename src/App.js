@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import FilmCatalogGallery from './film-catalog-gallery';
+import ScandiFilmDetails from './scandi-film-details';
 
 function App() {
 	return (
@@ -13,14 +14,4 @@ function App() {
 		</Router>
 	);
 }
-
-function ScandiFilmDetails() {
-	return (
-		<div className="scandi-film-details">
-			<h1>All you ever wanted to know about Scandinavian Noir</h1>
-			<h4>Page under construction</h4>
-		</div>
-	);
-}
-
 export default App;
