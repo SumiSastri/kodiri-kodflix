@@ -267,7 +267,7 @@ function FilmCatalog(props) {
 
 export default FilmCatalog;
 ```
-### CSS-Grid
+### CSS-Grid (14)
 
 You can add flexibility to design by putting all the covers in one row instead of two. Wrap the content in one parent div. As it is display flex, the film covers stack up in one row. In the parent div - the film-cover-container, you need to use flex-wrap so that the children of the parent item - film-covers wrap based on the criteria set. In the child element, the individual covers, set the flex-basis to 120px. The items will break at 120px and wrap around 2 rows. However, the 2nd row, the 2 items that wrap into these rows take up all the space of the rows.
 
