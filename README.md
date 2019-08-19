@@ -1,24 +1,25 @@
 
-## Kodiri-Kodflix Challenge 2-11
+## Kodiri-Kodflix Challenge 2-13
 ![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
 
 ### Set up
 [npx create-react-app app-name]
 [yarn add react-router-dom]
 
-### Challenges 1-11
-* Clean up react app
-* Set up your Kodiri-Kodflix project title
-* Add one image
-* Add 5 more images
-* Display them in 2 rows 
-* Display 3 covers per row with the same aspect ratio
-* Mobile first design
-* CSS animation - hover over images
-* Show the title of the film on hover
-* Scale the app by making reusable components
-* Make a new component for the gallery
-* Add routing to create individual pages/ urls
+### Challenges 1-13
+* Challenge 1: Clean up react app display 'hello world'
+* Challenge 2: Set up your Kodiri-Kodflix project title
+* Challenge 3: Add one image
+* Challenge 4: Add 5 more images
+* Challenge 5: Display them in 2 rows 
+* Challenge 6: Display 3 covers per row with the same aspect ratio
+* Challenge 7: Mobile first design
+* Challenge 8: CSS animation - hover over images
+* Challenge 9: Show the title of the film on hover
+* Challenge 10: Scale the app by making reusable components
+* Challenge 11: Make a new component for the gallery
+* Challenge 12: Add routing to create one page that links to a details page
+* Challenge 13: Add routing to many pages
 
 #### Image resources
 * Google
@@ -35,8 +36,7 @@ Icons resources
 Fonts resources
 Google Fonts
 
-### React
-Solutions: -
+### React  1 to 10
 * Set up the jsx containers - main for the whole project
 * 2 rows - row1 and row2 as the row containers
 * give each div that holds the images a class name
@@ -112,7 +112,7 @@ h1 {
 	}
 }
 ```
-#### Summary:
+#### Summary 1-10
 * Flex alters the default behaviour of jsx-html tags
 * By putting elements into a container, each container you display flex
 * The elements then gets them into rows
@@ -123,7 +123,7 @@ h1 {
 * Animations like transitions need to be planned, I used a description on hover to give a brief idea of what the film is about as a better ui experience for those not familiar with Scandi-noir
 
 
-### Elegance and refactoring
+### Elegance and refactoring 10 & 11
 
 * Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
 * Remove all empty spaces
@@ -143,8 +143,14 @@ img {
 	border: dashed 2px #000080;
 }
 ```
+### How react works
 
-### Components
+React is a javascript library that uses jsx tags. Jsx mimics HTML but is java script.
+Jsx elements take attributes that can be styled by are called className not class as class reserved word for constructors in javascript. JSX always has to have 1 root element (div/ main/ section) that encloses the block of code.
+
+Constructors, extend the react component to inherit all the base functionality into a class this then can be exported to other parts of the app.
+
+### Components 10-12
 * Create your component by taking the original jsx structure
 * Refactor with props - rename the alt, src, jsx h5 tags 
 
@@ -174,6 +180,89 @@ export default FilmCatalog;
 						description={`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
 					/>
 ```					
-### Routing with React Router
+### Functional components - stateless
 
-* Install the router and import it into the app
+There are 2 types of components, functional or dumb components and components that hold data or state (stateful components.)
+
+A component is a constructor object that creates several components.  By importing the Component constructor we create new classes of components that inherit the properties of the parent React Component and that can be imported and exported to different parts of your app.
+
+```
+Import React, {Component} from ‘react’
+
+The class NewComponent extends Component {
+ - here it creates a new component which can be rendered through the react render function
+
+render() {
+     return( jsx objects that will be exported into the main app and then the main app is imported into root HTML);
+ }
+}
+
+Export default NewComponent;
+```
+
+Presentational components are used for pure rendering of pages or presentation purposes
+- Forms
+- Nav bars
+- buttons
+- Pages that are used again and again
+
+They are components that do not have to have state they are also called stateless components
+
+Because they only render something that is passed down as a prop and do no work except render the properties passed down from another component they are also sometimes called a dumb components 
+
+They can be written as anonymous functions but they will not be hoisted Must have a render function that returns something
+
+```
+const NewComponent = (properties) => { 
+  return ( properties that have been passed down from the component you are extending )
+}
+```
+
+### Routing with React Router (12 & 13)
+
+* Install the router and import it into the app [yarn add react-router-dom]
+* Import the router into the project
+* The React-Router needs to be imported once in the main app
+* It is important to check the version - the version in this app is 5
+* Renaming the BrowserRouter to Router assigns it to a shorter value that you can import 
+
+```
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+```
+
+* It becomes like any other component to import with one important difference there can only be one parent which is the router that wraps the whole app and all the paths in it, the Route component allows you to specify the path, the exact path ```/ ```and the wild card path ```/:``` that shows paths with ids
+
+```
+function App() {
+	return (
+		<Router>
+			<div className="app-container">
+				<Route exact path="/" component={FilmCatalogGallery} />
+				<Route exact path="/:" scandi-film-details" component={ScandiFilmDetails} />
+			</div>
+		</Router>
+	);
+}
+export default App;
+```
+
+You can link pages with the Link component from the library and then use the Link component
+
+```
+import { Link } from 'react-router-dom';
+```
+
+```
+function FilmCatalog(props) {
+	return (
+		<Link to="/scandi-film-details" className="film-cover">
+			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
+			<div className="film-cover-overlay">
+				<h5>{props.description}</h5>
+			</div>
+		</Link>
+	);
+}
+
+export default FilmCatalog;
+```
