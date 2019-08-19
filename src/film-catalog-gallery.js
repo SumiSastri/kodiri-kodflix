@@ -13,7 +13,8 @@ function FilmCatalogGallery() {
 			<header className="header">
 				<h1> Scandinavian-Noir Kodiri 's Kodflix Challenge</h1>
 			</header>
-			<div className="row1">
+
+			<div className="film-covers-container">
 				<FilmCatalog
 					id="the-wave-film"
 					cover={bolgen}
@@ -25,23 +26,18 @@ function FilmCatalogGallery() {
 					description={`The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
 		but what (or who) is the prey?(Denmark)`}
 				/>
-
 				<FilmCatalog
 					id="girl-with-dragon-tattoo-film"
 					cover={girlWithTheDragonTattoo}
 					description={`Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
 		sadist's fates are entagled with each other? (Sweden)`}
 				/>
-			</div>
-
-			<div className="row2">
 				<FilmCatalog
 					id="snabbe-cash-film"
 					cover={snabbeCash}
 					description={`Snabbe Cash: A student wants to make some easy money as a cab driver, it gets messy as
 		the criminal underworld are his passengers(Sweden)`}
 				/>
-
 				<FilmCatalog
 					id="trapped-film"
 					cover={trapped}
@@ -59,3 +55,16 @@ function FilmCatalogGallery() {
 	);
 }
 export default FilmCatalogGallery;
+
+// function getFilms() {
+// 	return [
+
+// { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+// { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+// { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+// { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+// } { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+// { id: "the-wave-film", cover:{bolgen}, description:{`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+
+// ];
+// }

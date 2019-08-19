@@ -6,33 +6,32 @@
 	background: lightslategray;
 }
 
-h1 {
-	text-align: center;
-	color: blanchedalmond;
-	font-family: 'Lacquer', sans-serif;
-}
-
 img {
-	width: 65%;
-	height: 75%;
-	padding: 45px;
-	border: dashed 2px #000080;
+	width: 75%;
+	height: 80%;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px black;
 }
 
-.row1,
-.row2 {
-	display: flex;
+.film-covers-container {
+	/* display: flex;
+	flex-wrap: wrap; */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
 	border: solid 1px lightyellow;
 }
 
-h5 {
-	font-family: 'Lacquer', sans-serif;
-	text-align: center;
-	font-size: 18px;
-	color: navy;
+.film-cover {
+	/* flex: 1;
+	flex-basis: 120px; */
+	padding: 30px;
+	border: dashed 2px #000080;
+	position: relative;
+	overflow: hidden;
 }
 
 .film-cover-overlay {
@@ -53,13 +52,14 @@ h5 {
 	top: 0;
 }
 
-.film-cover {
-	flex: 1;
-	position: relative;
-	overflow: hidden;
-}
 .scandi-film-details {
 	background: slateblue;
+}
+
+h1 {
+	text-align: center;
+	color: blanchedalmond;
+	font-family: 'Lacquer', sans-serif;
 }
 h4 {
 	font-family: 'Lacquer', sans-serif;
@@ -68,9 +68,9 @@ h4 {
 	color: lightsalmon;
 }
 
-@media only screen and (max-width: 640px) {
-	.row1,
-	.row2 {
-		flex-direction: column;
-	}
+h5 {
+	font-family: 'Lacquer', sans-serif;
+	text-align: center;
+	font-size: 18px;
+	color: navy;
 }
