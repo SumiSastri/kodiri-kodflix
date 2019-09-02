@@ -16,7 +16,7 @@ function FilmCatalogGallery() {
 
 			<div className="film-covers-container">
 				{getFilms().map((films) => {
-					return <FilmCatalog id="" cover="" description="" />;
+					return <FilmCatalog id={films.id} cover={films.cover} description={films.description} />;
 				})}
 			</div>
 		</main>
@@ -24,7 +24,7 @@ function FilmCatalogGallery() {
 }
 export default FilmCatalogGallery;
 
-function getFilms() {
+function getFilms(films) {
 	return [
 		{
 			id: 'the-wave-film',
@@ -51,7 +51,7 @@ but what (or who) is the prey?(Denmark)`
 		},
 		{
 			id: 'trapped-film',
-			cover: { trapped },
+			cover: trapped,
 			description: `Trapped: A multilated corpse is found by a fisherman, who does the headless, limbless
 		body belong to?(Iceland)`
 		},
