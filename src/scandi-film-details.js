@@ -8,6 +8,13 @@ export default class ScandiFilmDetails extends React.Component {
 			welcomeMessage: 'All you ever wanted to know about Scandinavian Noir'
 		};
 	}
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({
+				welcomeMessage: 'The best is yet to come...'
+			});
+		}, 3000);
+	}
 	render() {
 		return (
 			<Link to="/">
