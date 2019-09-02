@@ -9,7 +9,7 @@ function App() {
 		<Router>
 			<div className="app-container">
 				<Route exact path="/" component={FilmCatalogGallery} />
-				<Route exact path="/scandi-film-details" component={ScandiFilmDetails} />
+				<Route exact path="/:filmId" component={ScandiFilmDetails} />
 			</div>
 		</Router>
 	);
