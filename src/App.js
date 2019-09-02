@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import FilmCatalogGallery from './film-catalog-gallery';
-import ScandiFilmDetails from './scandi-film-details';
+import ScandiFilmDetails from './details/scandi-film-details';
 
 function App() {
 	return (
