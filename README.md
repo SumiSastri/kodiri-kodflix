@@ -39,7 +39,6 @@ JSX elements take attributes that can be styled by are called className not clas
 
 More on React here: [https://www.reactenlightenment.com/]
 
-
 ### Stateless, Functional, Presentational or Dumb Components
 
 Stateless or functional components, use functions to present or render JSX elements. They are also known as presentational components as they are used for pure rendering of pages like
@@ -82,13 +81,13 @@ const NewComponent = (properties) => {
 }
 ```
 
- 
-### Set up 
+## Project RoadMap
+
+##### Set up 
 [npx create-react-app app-name]
 [yarn add react-router-dom]
-
 ##### List of Challenges from scaffolding to deploy
-##### Challenges 1-14
+##### Challenges 1-14 Stateless Components
 * Challenge 1: Clean up react app display 'hello world'
 * Challenge 2: Set up your Kodiri-Kodflix project title
 * Challenge 3: Add one image
@@ -103,7 +102,7 @@ const NewComponent = (properties) => {
 * Challenge 12: Add routing to create one page that links to a details page
 * Challenge 13: Add routing to many pages
 * Challenge 14: Layout with CSS-Grid
-##### Challenges 15-20 stateful components & data models
+##### Challenges 15-20 Stateful Components & Data Models
 * Challenge 15: Creating an array of objects for the images, text
 * Challenge 16: Creating stateful components
 * Challenge 17:
@@ -252,7 +251,6 @@ function FilmCatalog(props) {
 
 export default FilmCatalog;
 ```
-
 ### Elegance and refactoring
 * Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
 * Remove all empty spaces
