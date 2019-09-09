@@ -81,6 +81,16 @@ const NewComponent = (properties) => {
 }
 ```
 
+## Routing
+
+React does not come with routing out of the box, it has to be installed in a project [yarn add react-router-dom] and the router needs to be imported as well as other higher order components that enable routing, remembering routing history and connecting and linking pages.
+
+Get the id of the object - go to App.js and the route ```<Route exact path="/:filmId" component={ScandiFilmDetails} />```
+
+Access the id with the method ```let filmId = this.props.match.params.filmId;```
+
+```npm run start --no cache```
+
 ## Project RoadMap
 
 ##### Set up 
@@ -204,6 +214,37 @@ h1 {
 	}
 }
 ```
+### Refactoring challenges 10-12
+* Create your component by taking the original jsx structure
+* Refactor with props - rename the alt, src, jsx h5 tags 
+
+```
+import React from 'react';
+
+function FilmCatalog(props) {
+	return (
+		<div className="film-cover">
+			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
+			<div className="film-cover-overlay">
+				<h5>{props.description}</h5>
+			</div>
+		</div>
+	);
+}
+
+export default FilmCatalog;
+```
+* connect them to the parent which is App.js At this stage, you can not have individual names for the covers, descriptions as this will be difficult to scale, so remove the original jsx individual names and descriptions, alt tags etc., so that any film  in the films container can be easily updated.
+
+```
+<main className="films-container">
+				<div className="row1">
+					<FilmCatalog
+						cover={bolgen}
+						description={`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
+					/>
+```	
+
 ### Routing with React Router (12 & 13)
 * Install the router and import it into the app [yarn add react-router-dom]
 * Import the router into the project
@@ -251,6 +292,43 @@ function FilmCatalog(props) {
 
 export default FilmCatalog;
 ```
+
+## Challenge 15 - data models
+
+From hard coding data we can create a function called getFilms to access this data, all the function does is return the data as an array so that we can use array methods to access each element of the array
+
+```
+export default function getFilms() {
+	return [
+		{
+			id: 'the-wave-film',
+			name: 'the-wave',
+			cover: bolgen,
+			description: `The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`
+		},
+	]
+	```
+ 
+ In another component you can use array.map() method to display each film again
+
+ ```
+ <div className="film-covers-container">
+				{getFilms().map((films) => {
+					return (
+						<FilmCatalog key={films.id} 
+						id={films.id} cover={films.cover} 
+						description={films.description} />
+					);
+				})}
+			</div>
+```			
+
+
+
+## Challenge 16-17 stateful components with individual pages
+
+Display the id of the page - open App.js the routing component, use lifecycle method componentDidMount
+
 ### Elegance and refactoring
 * Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
 * Remove all empty spaces
@@ -269,36 +347,3 @@ img {
 	border: dashed 2px #000080;
 }
 ```
-### Refactoring challenges 10-12
-* Create your component by taking the original jsx structure
-* Refactor with props - rename the alt, src, jsx h5 tags 
-
-```
-import React from 'react';
-
-function FilmCatalog(props) {
-	return (
-		<div className="film-cover">
-			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
-			<div className="film-cover-overlay">
-				<h5>{props.description}</h5>
-			</div>
-		</div>
-	);
-}
-
-export default FilmCatalog;
-```
-* connect them to the parent which is App.js At this stage, you can not have individual names for the covers, descriptions as this will be difficult to scale, so remove the original jsx individual names and descriptions, alt tags etc., so that any film  in the films container can be easily updated.
-
-```
-<main className="films-container">
-				<div className="row1">
-					<FilmCatalog
-						cover={bolgen}
-						description={`The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`}
-					/>
-```	
-
-
- 
