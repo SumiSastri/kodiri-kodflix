@@ -11,7 +11,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path="/" component={FilmCatalogGallery} />
-					<Route exact path="/page-not-found" component={PageNotFound} />
+					<Route exact path="/pageNotFound" component={PageNotFound} />
 					<Route exact path="/:filmId" component={ScandiFilmDetails} />
 				</Switch>
 			</Router>

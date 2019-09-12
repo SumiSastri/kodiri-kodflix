@@ -10,10 +10,8 @@ function FilmCatalogGallery() {
 			</header>
 
 			<div className="film-covers-container">
-				{getFilms().map((films) => {
-					return (
-						<FilmCatalog key={films.id} id={films.id} cover={films.cover} description={films.description} />
-					);
+				{getFilms().map((film) => {
+					return <FilmCatalog key={film.id} id={film.id} cover={film.cover} description={film.description} />;
 				})}
 			</div>
 		</main>
