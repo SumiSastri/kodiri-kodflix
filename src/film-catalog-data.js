@@ -11,42 +11,48 @@ export default function getFilms() {
 			id: 'the-wave-film',
 			name: 'the-wave',
 			cover: bolgen,
-			description: `The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`
+			description: `A family get trapped when landslide is caused by a tidal wave.`,
+			country: 'Norway'
 		},
 		{
 			id: 'the-hunt-film',
 			name: 'the-hunt',
 			cover: theHunt,
-			description: `The Hunt: Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
-but what (or who) is the prey?(Denmark)`
+			description: `Twelve strangers wake up in a clearing, they now have to prepare for the hunt,
+but what (or who) is the prey?`,
+			country: 'Norway'
 		},
 		{
 			id: 'girl-with-dragon-tattoo-film',
 			name: 'the-girl-with-the-dragon-tattoo',
 			cover: girlWithTheDragonTattoo,
-			description: `Girl With The Dragon Tattoo: What happens when a journalist, computer hacker and
-		sadist's fates are entagled with each other? (Sweden)`
+			description: `What happens when a journalist, computer hacker and
+		sadist's fates are entagled with each other?`,
+			country: 'Sweden'
 		},
 		{
 			id: 'snabbe-cash-film',
 			name: 'snabbe-cash',
 			cover: snabbeCash,
-			description: `Snabbe Cash: A student wants to make some easy money as a cab driver, it gets messy as
-		the criminal underworld are his passengers(Sweden)`
+			description: `A student wants to make some easy money as a cab driver, it gets messy as
+		the criminal underworld are his passengers`,
+			country: 'Sweden'
 		},
 		{
 			id: 'trapped-film',
 			name: 'trapped',
 			cover: trapped,
-			description: `Trapped: A multilated corpse is found by a fisherman, who does the headless, limbless
-		body belong to?(Iceland)`
+			description: `A multilated corpse is found by a fisherman, who does the headless, limbless
+		body belong to?`,
+			country: 'Iceland'
 		},
 		{
 			id: 'dicte-tv-series',
 			name: 'dicte',
 			cover: dicte,
-			description: `Dicte: A divorced journalist goes back to her home town to make peace with her past, but
-		things take an ugly turn (Denmark)`
+			description: `A divorced journalist goes back to her home town to make peace with her past, but
+		things take an ugly turn`,
+			country: 'Denmark'
 		}
 	];
 }

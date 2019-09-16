@@ -1,6 +1,6 @@
 import React from 'react';
 import FilmCatalog from './film-catalog';
-import getFilms from './films';
+import getFilms from './film-catalog-data';
 
 function FilmCatalogGallery() {
 	return (
