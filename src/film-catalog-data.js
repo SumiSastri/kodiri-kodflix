@@ -11,8 +11,15 @@ export default function getFilms() {
 			id: 'the-wave-film',
 			name: 'the-wave',
 			cover: bolgen,
-			description: `A family get trapped when landslide is caused by a tidal wave.`,
-			country: 'Norway'
+			country: 'Norway',
+			description: `A family get trapped when a landslide is caused by a tidal wave.`,
+			review: `Nestled in Norway's Sunnmøre region, Geiranger is one of the 
+			most spectacular tourist draws on the planet. With the mountain Åkerneset overlooking the village 
+			- and constantly threatening to collapse into the fjord - it is also a place where cataclysm could 
+			strike at any moment. After putting in several years at Geiranger's warning center, 
+			geologist Kristian is moving on to a prestigious gig with an oil company. But the very day he's 
+			about to drive his family to their new life in the city, Kristian senses something isn't right. 
+			The substrata are shifting. No one wants to believe that this could be the big one ... `
 		},
 		{
 			id: 'the-hunt-film',

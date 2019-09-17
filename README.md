@@ -5,19 +5,22 @@ Kodflix is a student project to display a film catalog using the MERN stack (Mon
 ![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
 
 ## Table of Contents
+Part 1
 * Learning objectives
 * What is JSX
 * Styling & React 1: CSS-Flexbox 
 * Styling & React 2: CSS-Grid
 * Stateless or Functional Components
 * Stateful Components & Data Models
+* Routing
+* Deploying to Heroku 
+
+Part 2:
 * Project Roadmap
 * Set up & scaffolding
 * List of challenges from scaffolding to deploy
 * Images and resources
-* Routing
-* Refactoring and Elegance
-* Deploying to Heroku 
+
 
 ### Learning objectives
 
@@ -115,7 +118,11 @@ Access the id with the method ```let filmId = this.props.match.params.filmId;```
 ##### Challenges 15-20 Stateful Components & Data Models
 * Challenge 15: Creating an array of objects for the images, text
 * Challenge 16: Creating stateful components
-* Challenge 17:
+* Challenge 17: Individual pages for each movie
+* Challenge 18: Create a not-found page
+* Challenge 19: Style the movie-component page
+* Challenge 20: Deploy to Heroku
+
 #### Resources
 
 Image resources
@@ -308,6 +315,7 @@ export default function getFilms() {
 		},
 	]
 	```
+## Challenge 16 	
  
  In another component you can use array.map() method to display each film again
 

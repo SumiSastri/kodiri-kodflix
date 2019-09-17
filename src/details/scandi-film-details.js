@@ -27,9 +27,12 @@ export default class ScandiFilmDetails extends Component {
 					<div className="details-container">
 						<img alt={this.state.film.name} className="details-image" src={this.state.film.cover} />
 						<div className="details-country">
-							<h2 classname="details-info-overlay">{this.state.film.country}</h2>
+							<h2 className="details-info-overlay">{this.state.film.country}</h2>
 						</div>
-						<p classname="details-info">{this.state.film.description}</p>
+						<div>
+							<h2>{this.state.film.description}</h2>
+							<p>{this.state.film.review}</p>
+						</div>
 					</div>
 					<Link to="/">
 						<h4>Back to home page</h4>
