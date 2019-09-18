@@ -414,7 +414,7 @@ Test the chained map function is working with pure text first, then with the ima
 ![testing-mapping-with-text](src/assets/testing-map-function.png)
 ![testing-mapping-with-images](src/assets/testing-map-function2.png)
 
-## Challenge 16-17-18 individual pages and conditional rendering for a 404
+#### Challenge 16-17-18 individual pages and conditional rendering for a 404
 
 Refactor the details pages for the individual route pages as the penultimate step before deploying the app with data in the front end.. Display the id of the page - open App.js the routing component, use lifecycle method componentDidMount.
 
@@ -467,7 +467,7 @@ export default class ScandiFilmDetails extends Component {
 }
 ```
 
-### Elegance and refactoring to improve run-time efficiencies and code readability
+#### Elegance and refactoring to improve run-time efficiencies and code readability
 * Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
 * Remove all empty spaces
 * Check naming conventions
