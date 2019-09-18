@@ -326,7 +326,7 @@ CSS frameworks
 	}
 }
 ```
-### Refactoring challenges 10-12
+#### Refactoring challenges 10-12
 * Create a separate FilmCatalog component
 * Refactor by passing the props where required
 
@@ -361,7 +361,7 @@ export default FilmCatalog;
 
 Routing is described in detail in the learning objectives section
 
-## Challenge 15 - data models
+#### Challenge 15 - data models
 
 From hard coding data we can create a function called getFilms to access this data, all the function does is return the data as an array so that we can use array methods to access each element of the array. 
 
@@ -377,8 +377,9 @@ export default function getFilms() {
 			description: `The Wave: A family get trapped when landslide is caused by a tidal wave.(Norway)`
 		},
 	]
-	```
-## Challenge 16 - Transforming data with methods for rendering 	
+
+```
+#### Challenge 16 - Transforming data with methods for rendering 	
  
 Often data needs to be transformed to serve the purpose of what you want to render on the page. The array is a static list of data sets in objects. As we have set up a custom function ```getFilms()``` which returns the nested array of objects, we can now in the FilmCatalog  component use  ```array.map()``` to display each film. This adds flexibility to the data we want to display on the page, we access this with the key of the film.id.
 
