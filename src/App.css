@@ -18,7 +18,7 @@ img {
 	/* display: flex;
 	flex-wrap: wrap; */
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
@@ -58,7 +58,7 @@ h1 {
 	font-family: 'Lacquer', sans-serif;
 }
 h2 {
-	font-size: 24px;
+	font-size: 28px;
 	font-family: 'Lacquer', sans-serif;
 	color: orangered;
 }
@@ -109,12 +109,7 @@ p {
 
 .details-country {
 	padding: 30px;
-	border: dashed 2px orangered;
 	position: absolute;
-	background-color: paleturquoise;
-	opacity: 0.7;
-	height: 20px;
-	width: 20px;
 }
 
 .details-info-overlay {

@@ -5,22 +5,20 @@ Kodflix is a student project to display a film catalog using the MERN stack (Mon
 ![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
 
 ## Table of Contents
-Part 1
+Part 1 - Theoretical concepts
 * Learning objectives
 * What is JSX
-* Styling & React 1: CSS-Flexbox 
-* Styling & React 2: CSS-Grid
+* Styling, CSS & React 
 * Stateless or Functional Components
 * Stateful Components & Data Models
 * Routing
-* Deploying to Heroku 
 
-Part 2:
+Part 2: Code base and refactoring
 * Project Roadmap
-* Set up & scaffolding
-* List of challenges from scaffolding to deploy
+* List of challenges from scaffolding to deploy (1-20)
 * Images and resources
-
+* Set up & scaffolding (React, JavaScript, CSS-Grid/ Flexbox Challenges 1-10)
+* 
 
 ### Learning objectives
 
@@ -36,11 +34,12 @@ JSX mimics HTML & XML and pre-processors, like Babel, transpile the JSX and conv
 
 JSX allows you to write exactly the same tags as HTML, mimicking the document object model structure.
 
- React enables this process with a React.createElement() method.
+React enables this process with a React.createElement() method.
 
 JSX elements take attributes that can be styled by are called className not class as class reserved word for constructors in javascript. JSX always has to have 1 root element (div/ main/ section) that encloses the block of code.
 
 More on React here: [https://www.reactenlightenment.com/]
+
 
 ### Stateless, Functional, Presentational or Dumb Components
 
@@ -84,15 +83,74 @@ const NewComponent = (properties) => {
 }
 ```
 
+## Styling, CSS & React 
+
+React can be styled with vanilla css, flex-box and grid. There is also css in java-script (Styled Component being the most popular with React), which has not been used in this project.
+
+Grid is the primary CSS framework used matched with Flexbox. As everything is a box in CSS and the normal document flow is top down (column). I used this project to experiment with CSS Grid to understand how to use it. 
+
+Some CSS animation with hovers and pseudo selectors have been used and light animation. All CSS code is in the app.css file to keep CSS styling clearly separated from the components for this project.
+
 ## Routing
 
-React does not come with routing out of the box, it has to be installed in a project [yarn add react-router-dom] and the router needs to be imported as well as other higher order components that enable routing, remembering routing history and connecting and linking pages.
+React does not come with routing out of the box, it has to be installed in a project [yarn add react-router-dom] and the router needs to be imported as well as other higher order components that enable routing, remembering routing history and connecting and linking pages. It is imported once into the main app. It is important to check the version (the version in this app is 5) and documentation 
 
-Get the id of the object - go to App.js and the route ```<Route exact path="/:filmId" component={ScandiFilmDetails} />```
+In a Single Page Application (SPA), each individual page has a route back to App.js including the 404 error page not found.
 
-Access the id with the method ```let filmId = this.props.match.params.filmId;```
+When importing the router from the library you can rename the BrowserRouter to Router and assign it to a shorter value that you can import. 
 
-```npm run start --no cache```
+```
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+```
+
+It becomes like any other component to import with one important difference there can only be one parent which is the router that wraps the whole app and all the paths in it, the Route component allows you to specify the path, the exact path ```/ ```and the wild card path ```/:``` that shows paths with ids
+
+The routing funnel goes from the  general - home page to the specific, pages with ids
+```
+function App() {
+	return (
+		<Router>
+			<div className="app-container">
+				<Route exact path="/" component={FilmCatalogGallery} />
+				<Route exact path="/:" scandi-film-details" component={ScandiFilmDetails} />
+			</div>
+		</Router>
+	);
+}
+export default App;
+```
+
+In the component to identify the id and name the url with an id (filmId) in this case 
+
+```<Route exact path="/:filmId" component={ScandiFilmDetails} />```
+
+Access the id with the method ```let filmId = this.props.match.params.filmId;``` this will hten search all the props that match the params of filmId and return the pages - these in this app are the details pages with each individual film.
+
+You can link pages with the Link component from the library and then use the Link component
+
+```
+import { Link } from 'react-router-dom';
+```
+At this stage you need to refactor the link to a prop with template literals - this was something I failed to do and spent a lot of time trying to debug what was wrong with the source page (scandi-film-details) page as it was not rendering and I was getting a stack overflow error which pointed to the details page but the error was in the actual FilmCatalog component
+
+```
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function FilmCatalog(props) {
+	return (
+		<Link to={`/${props.id}`} className="film-cover">
+			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
+			<div className="film-cover-overlay">
+				<h5>{props.description}</h5>
+			</div>
+		</Link>
+	);
+}
+export default FilmCatalog;
+```
+You may need to redirect pages for 404's - for this you will need to import the redirect component
+```import { Link, Redirect } from 'react-router-dom';```
 
 ## Project RoadMap
 
@@ -119,7 +177,7 @@ Access the id with the method ```let filmId = this.props.match.params.filmId;```
 * Challenge 15: Creating an array of objects for the images, text
 * Challenge 16: Creating stateful components
 * Challenge 17: Individual pages for each movie
-* Challenge 18: Create a not-found page
+* Challenge 18: Create a not-found page (condtional rendering)
 * Challenge 19: Style the movie-component page
 * Challenge 20: Deploy to Heroku
 
@@ -152,28 +210,11 @@ CSS frameworks
 * use the class name in css to use flex box
 * To understand the working of the box-model in css and css grid, put the h1 into a header tag and put it in another color
 * You can run a border around the two rows as well if it makes it easier to understand the box model, but the layout could become too cluttered, I used light color and 1px to display the row grid lines that is only just visible to the eye, but gives me an understanding of the different boxes in the css-box model. This will be removed as a last step.
-
-```
-.header {
-	background: lightslategray;
-}
-
-h1 {
-	text-align: center;
-	color: blanchedalmond;
-	font-family: 'Lacquer', sans-serif;
-}
-
-.row1,
-.row2 {
-	display: flex;
-	align-items: auto;
-	padding: 5px;
-	margin: 5px;
-}
-```
-
-* give the film covers a generic name to reduce styling repetion, and change the position to relative. The title of the film in the h5 jsx tag is relative to the film cover position, the film cover position remains absolute 
+* Creating an overlay and hover effects 
+  - give the film covers a generic name to reduce styling repetion
+  - change the position to relative. 
+  - the title of the film in the h5 jsx tag is relative to the film cover position
+  - the film cover position remains absolute 
 
 ```
 .film-cover {
@@ -222,8 +263,8 @@ h1 {
 }
 ```
 ### Refactoring challenges 10-12
-* Create your component by taking the original jsx structure
-* Refactor with props - rename the alt, src, jsx h5 tags 
+* Create a separate FilmCatalog component
+* Refactor by passing the props where required
 
 ```
 import React from 'react';
@@ -253,56 +294,14 @@ export default FilmCatalog;
 ```	
 
 ### Routing with React Router (12 & 13)
-* Install the router and import it into the app [yarn add react-router-dom]
-* Import the router into the project
-* The React-Router needs to be imported once in the main app
-* It is important to check the version - the version in this app is 5
-* Renaming the BrowserRouter to Router assigns it to a shorter value that you can import 
 
-```
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-```
-
-* It becomes like any other component to import with one important difference there can only be one parent which is the router that wraps the whole app and all the paths in it, the Route component allows you to specify the path, the exact path ```/ ```and the wild card path ```/:``` that shows paths with ids
-
-```
-function App() {
-	return (
-		<Router>
-			<div className="app-container">
-				<Route exact path="/" component={FilmCatalogGallery} />
-				<Route exact path="/:" scandi-film-details" component={ScandiFilmDetails} />
-			</div>
-		</Router>
-	);
-}
-export default App;
-```
-
-You can link pages with the Link component from the library and then use the Link component
-
-```
-import { Link } from 'react-router-dom';
-```
-
-```
-function FilmCatalog(props) {
-	return (
-		<Link to="/scandi-film-details" className="film-cover">
-			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
-			<div className="film-cover-overlay">
-				<h5>{props.description}</h5>
-			</div>
-		</Link>
-	);
-}
-
-export default FilmCatalog;
-```
+Routing is described in detail in the learning objectives section
 
 ## Challenge 15 - data models
 
-From hard coding data we can create a function called getFilms to access this data, all the function does is return the data as an array so that we can use array methods to access each element of the array
+From hard coding data we can create a function called getFilms to access this data, all the function does is return the data as an array so that we can use array methods to access each element of the array. 
+
+The function is written so that you can call the data in a quicker, more elegant manner and to use array methods when required.
 
 ```
 export default function getFilms() {
@@ -315,29 +314,95 @@ export default function getFilms() {
 		},
 	]
 	```
-## Challenge 16 	
+## Challenge 16 - Transforming data with methods for rendering 	
  
- In another component you can use array.map() method to display each film again
+Often data needs to be transformed to serve the purpose of what you want to render on the page. The array is a static list of data sets in objects. As we have set up a custom function ```getFilms()``` which returns the nested array of objects, we can now in the FilmCatalog  component use  ```array.map()``` to display each film. This adds flexibility to the data we want to display on the page, we access this with the key of the film.id.
+
+The custom function we write is chained - ```{getFilms().map((film))``` the map function is chained taking two arguements the empty call back function and the item to iterate over.
+
+The map function returns the FilmCatalog componenent with the key and the relevant props of the object - in this component we do not want to render the review prop so it can be ommited.
 
  ```
- <div className="film-covers-container">
-				{getFilms().map((films) => {
-					return (
-						<FilmCatalog key={films.id} 
-						id={films.id} cover={films.cover} 
-						description={films.description} />
-					);
+import React from 'react';
+import FilmCatalog from './film-catalog';
+import getFilms from './film-catalog-data';
+
+function FilmCatalogGallery() {
+	return (
+		<main className="films-container">
+			<header className="header">
+				<h1> Scandinavian-Noir Kodiri 's Kodflix Challenge</h1>
+			</header>
+
+			<div className="film-covers-container">
+				{getFilms().map((film) => {
+					return <FilmCatalog key={film.id} id={film.id} cover={film.cover} description={film.description} />;
 				})}
 			</div>
+		</main>
+	);
+}
+export default FilmCatalogGallery;
 ```			
 
+Test the chained map function is working with pure text first, then with the image
+![testing-mapping-with-text](src/assets/testing-map-function.png)
+![testing-mapping-with-images](src/assets/testing-map-function2.png)
 
+## Challenge 16-17-18 individual pages and conditional rendering for a 404
 
-## Challenge 16-17 stateful components with individual pages
+Refactor the details pages for the individual route pages as the penultimate step before deploying the app with data in the front end.. Display the id of the page - open App.js the routing component, use lifecycle method componentDidMount.
 
-Display the id of the page - open App.js the routing component, use lifecycle method componentDidMount
+This stateful component does the work of getting the films and rendering them on individual pages
 
-### Elegance and refactoring
+```
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import getFilms from '../film-catalog-data';
+import '../App.css';
+
+export default class ScandiFilmDetails extends Component {
+	constructor() {
+		super();
+		this.state = {
+			film: {}
+		};
+	}
+
+	componentDidMount() {
+		let filmId = this.props.match.params.filmId;
+		let film = getFilms().find((film) => film.id === filmId);
+		this.setState({ film });
+	}
+
+	render() {
+		if (this.state.film === undefined) {
+			return <Redirect to="/pageNotFound" />;
+		} else {
+			return (
+				<div className="scandi-film-details">
+					<h1 className="details-header">{this.state.film.name}</h1>
+					<div className="details-container">
+						<img alt={this.state.film.name} className="details-image" src={this.state.film.cover} />
+						<div className="details-country">
+							<h2 className="details-info-overlay">{this.state.film.country}</h2>
+						</div>
+						<div>
+							<h2>{this.state.film.description}</h2>
+							<p>{this.state.film.review}</p>
+						</div>
+					</div>
+					<Link to="/">
+						<h4>Back to home page</h4>
+					</Link>
+				</div>
+			);
+		}
+	}
+}
+```
+
+### Elegance and refactoring to improve run-time efficiencies and code readability
 * Right click on the app.js file and select the formatter you want to use, set to default and to update formatting on save
 * Remove all empty spaces
 * Check naming conventions
@@ -345,13 +410,5 @@ Display the id of the page - open App.js the routing component, use lifecycle me
 * Remove all commented out code and refactor where needed
 * Add custom fonts, colours and check look and feel of ui before commiting changes
 * Make the code simpler and ('DRY-er')
-For example I changed the image sizes a few times - this is the change made for challenge 8
-
-```
-img {
-	width: 65%;
-	height: 75%;
-	padding: 45px;
-	border: dashed 2px #000080;
-}
-```
+* For example I changed the image sizes a few times with grid, flex-box, overlays
+* Cleaning up divs and containers - this improves run time efficiency
