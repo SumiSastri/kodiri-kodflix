@@ -15,8 +15,6 @@ img {
 }
 
 .film-covers-container {
-	/* display: flex;
-	flex-wrap: wrap; */
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	align-items: auto;
@@ -26,8 +24,6 @@ img {
 }
 
 .film-cover {
-	/* flex: 1;
-	flex-basis: 120px; */
 	padding: 30px;
 	border: dashed 2px #000080;
 	position: relative;
@@ -61,6 +57,7 @@ h2 {
 	font-size: 28px;
 	font-family: 'Lacquer', sans-serif;
 	color: orangered;
+	margin: 20px;
 }
 h4 {
 	font-family: 'Lacquer', sans-serif;
@@ -76,8 +73,8 @@ h5 {
 	color: navy;
 }
 
-.scandi-film-details {
-	background: ghostwhite;
+.film-details-container {
+	display: grid;
 }
 
 .details-header {
@@ -85,46 +82,48 @@ h5 {
 	background-color: gainsboro;
 }
 
-.details-image {
-	height: 400px;
-	width: 250px;
-	background-color: blanchedalmond;
-}
-
-p {
-	font-size: 18px;
-	color: navy;
-	font-family: 'Lacquer', sans-serif;
-}
-
-.details-container {
+.details-info {
 	background-color: azure;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
 	align-items: auto;
 	padding: 5px;
 	margin: 5px;
-	border: solid 1px goldenrod;
 }
 
-.details-country {
-	padding: 30px;
-	position: absolute;
+.details-cover-container {
+	display: flex;
 }
 
-.details-info-overlay {
-	transition: top ease 1s;
-	display: none;
-	position: absolute;
-	width: 100%;
-	top: -10px;
-	right: 0;
+.details-image {
+	height: 400px;
+	width: 250px;
 	background-color: blanchedalmond;
-	width: 65%;
-	align-content: center;
+	position: relative;
+	overflow: hidden;
 }
 
-.details-country:hover .details-info-overlay {
-	display: block;
-	top: 0;
+.details-image-overlay {
+	position: absolute;
+	width: 10%;
+	left: 0;
+	margin: 20px;
+	padding: 10px;
+}
+
+.details-description-review {
+	background-color: aliceblue;
+}
+
+p {
+	font-size: 18px;
+	color: navy;
+	font-family: 'Lacquer', sans-serif;
+	margin: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+	.film-details-container .details-cover-container {
+		display: column;
+	}
 }

@@ -185,9 +185,34 @@ function FilmCatalog(props) {
 export default FilmCatalog;
 
 ```
-You may need to redirect pages for 404's - for this you will need to import the redirect component
+You may need to redirect pages for 404's - for this you will need create a new component  - pageNotFound.js
+This page redirects the user when they mistype a url to this page when they land on the scandi-film-details page
+Import this into App.js and create a separate route for it.  To switch from one page to another you will also need React Switch component to be imported from the library. The Redirect Component should be imported to the scandi-film-details file as the page when not found is redirected to the error message. On this page, the Link React component is also added as it links each individual page back to the home page.
 
-```import { Link, Redirect } from 'react-router-dom';```
+```
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import FilmCatalogGallery from './film-catalog-gallery';
+import ScandiFilmDetails from './details/scandi-film-details';
+import PageNotFound from './pageNotFound';
+
+function App() {
+	return (
+		<div className="app-container">
+			<Router>
+				<Switch>
+					<Route exact path="/" component={FilmCatalogGallery} />
+					<Route exact path="/pageNotFound" component={PageNotFound} />
+					<Route exact path="/:filmId" component={ScandiFilmDetails} />
+				</Switch>
+			</Router>
+		</div>
+	);
+}
+export default App;
+
+```
 
 ## Project RoadMap
 
