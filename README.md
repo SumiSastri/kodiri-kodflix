@@ -18,7 +18,8 @@ Part 2: Code base and refactoring
 * List of challenges from scaffolding to deploy (1-20)
 * Images and resources
 * Set up & scaffolding (React, JavaScript, CSS-Grid/ Flexbox Challenges 1-10)
-* 
+* Data models & routing (React, JavaScript Challenges 10-15)
+* Refactoring before deploy
 
 ### Learning objectives
 
@@ -51,7 +52,13 @@ Stateless or functional components, use functions to present or render JSX eleme
 
 Because they only render something that is passed down as a prop and do no work except render the properties passed down from another component they are also sometimes called a dumb components. 
 
+Functional components can also hold functions that mutuate data that you can then import into other components.
+
 ### React classes, components and constructors
+
+Instead of creating a function in a component that can be exported, classes are created with constructors.
+
+Like a javascript class, a react class is a proto-type that contains data (in state) that can be accessed via methods - lifecycle methods like ```ComponentDidMount()``` and ```this.setState({})```
 
 Every React component is a constructor object that allows you to export a copy of the component into other parts of the application.
 
@@ -62,7 +69,7 @@ We therefore import the component constructor from the react library first
 ```
 import React, {Component} from ‘react’
 ```
-Then we declare/ intantiate the new class of component which extends all the functionality of the parent react component, this is similar to intantiation of a factory component. The React higher order component has baked in methods like the React.createElement() method which transpiles JSX into a JavaScript object.
+Then we declare/ create an intance of or instantiate the new class of component which extends all the functionality of the parent react component, this is similar to instantiation of a factory component. The React higher order component has baked in methods like the React.createElement() method which transpiles JSX into a JavaScript object.
 
 ```
 The class NewComponent extends React.Component {
@@ -82,7 +89,31 @@ const NewComponent = (properties) => {
   return ( properties that have been passed down from the component you are extending )
 }
 ```
+Once we instantiate our component by setting state, we can update state and change the property or properties that we want changed on the page.
 
+An easy way to remember when you want to set state is to think of the ui - everytime the ui needs to be changed, state changes and therefore you need to create the ```setState``` method. In this component we only want to change the state of the film object - which we have stored in our front-end data model file - film-catalog-data.js
+
+```
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import getFilms from '../film-catalog-data';
+import '../App.css';
+
+export default class ScandiFilmDetails extends Component {
+	constructor() {
+		super();
+		this.state = {
+			film: {}
+		};
+	}
+
+	componentDidMount() {
+		let filmId = this.props.match.params.filmId;
+		let film = getFilms().find((film) => film.id === filmId);
+		this.setState({ film: film });
+	}
+
+```
 ## Styling, CSS & React 
 
 React can be styled with vanilla css, flex-box and grid. There is also css in java-script (Styled Component being the most popular with React), which has not been used in this project.
@@ -106,6 +137,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 It becomes like any other component to import with one important difference there can only be one parent which is the router that wraps the whole app and all the paths in it, the Route component allows you to specify the path, the exact path ```/ ```and the wild card path ```/:``` that shows paths with ids
 
 The routing funnel goes from the  general - home page to the specific, pages with ids
+
 ```
 function App() {
 	return (
@@ -118,19 +150,22 @@ function App() {
 	);
 }
 export default App;
+
 ```
 
 In the component to identify the id and name the url with an id (filmId) in this case 
 
 ```<Route exact path="/:filmId" component={ScandiFilmDetails} />```
 
-Access the id with the method ```let filmId = this.props.match.params.filmId;``` this will hten search all the props that match the params of filmId and return the pages - these in this app are the details pages with each individual film.
-
-You can link pages with the Link component from the library and then use the Link component
+Access the film like so 
+```let filmId = this.props.match.params.filmId;``` 
+this will hten search all the props that match the params of filmId and return the pages - these in this app are the details pages with each individual film. You can link pages with the Link component from the library and then use the Link component
 
 ```
 import { Link } from 'react-router-dom';
+
 ```
+
 At this stage you need to refactor the link to a prop with template literals - this was something I failed to do and spent a lot of time trying to debug what was wrong with the source page (scandi-film-details) page as it was not rendering and I was getting a stack overflow error which pointed to the details page but the error was in the actual FilmCatalog component
 
 ```
@@ -148,16 +183,18 @@ function FilmCatalog(props) {
 	);
 }
 export default FilmCatalog;
+
 ```
 You may need to redirect pages for 404's - for this you will need to import the redirect component
+
 ```import { Link, Redirect } from 'react-router-dom';```
 
 ## Project RoadMap
 
-##### Set up 
+Set up
 [npx create-react-app app-name]
 [yarn add react-router-dom]
-##### List of Challenges from scaffolding to deploy
+
 ##### Challenges 1-14 Stateless Components
 * Challenge 1: Clean up react app display 'hello world'
 * Challenge 2: Set up your Kodiri-Kodflix project title
@@ -173,7 +210,9 @@ You may need to redirect pages for 404's - for this you will need to import the 
 * Challenge 12: Add routing to create one page that links to a details page
 * Challenge 13: Add routing to many pages
 * Challenge 14: Layout with CSS-Grid
+
 ##### Challenges 15-20 Stateful Components & Data Models
+
 * Challenge 15: Creating an array of objects for the images, text
 * Challenge 16: Creating stateful components
 * Challenge 17: Individual pages for each movie
